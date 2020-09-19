@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/ranJokes">Random Joke</a>
+    <% data.forEach(item=>{ %>
+    <div>
+        <p><%= item.id%></p>
+        <p><%= item.type%></p>
+        <p><%= item.setup%></p>
+        <p><%= item.punchline%></p>
+        <form action="/addJokes" method="post">
+            <input type="hidden" name="id" value="<%= item.id%>">
+            <input type="hidden" name="type" value="<%= item.type%>">
+            <input type="hidden" name="setup" value="<%= item.setup%>">
+            <input type="hidden" name="punchline" value="<%= item.punchline%>">
+            <button>Add to my fav</button>
+        </form>
+
+    </div>
+
+
+    <% })%>
+</body>
+
+</html>

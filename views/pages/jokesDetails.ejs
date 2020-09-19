@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p><%= data.id%></p>
+        <p><%= data.type%></p>
+        <p><%= data.setup%></p>
+        <p><%= data.punchline%></p>
+        <form action="/deleteJoke/<%=data.idp%>?_method=delete" method="post">
+            <button>Delete</button>
+        </form>
+        <form action="/updateJoke/<%=data.idp%>?_method=put" method="post">
+            <input type="text" name="id" value="<%= data.id%>">
+            <input type="text" name="type" value="<%= data.type%>">
+            <input type="text" name="setup" value="<%= data.setup%>">
+            <input type="text" name="punchline" value="<%= data.punchline%>">
+            <button>update</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
